@@ -1,0 +1,25 @@
+@import "variables";
+
+#about {
+
+  .profile-pic {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+  }
+
+  .button {
+    background: $color-dark-grey;
+    color: white;
+
+    i {
+      margin-right: 15px;
+      font-size: 20px;
+    }
+  }
+
+  .button:hover {
+    background: $color-grey;
+  }
+}

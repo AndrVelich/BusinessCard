@@ -1,0 +1,19 @@
+@import "variables";
+
+.hero-image {
+  color: white;
+  background-image: url('../../assets/img/hero.jpg');
+  min-height: 70vh;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  position: relative;
+
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+}
+

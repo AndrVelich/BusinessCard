@@ -1,0 +1,85 @@
+@import "variables";
+@import "animations";
+
+#resume {
+
+  .header-col {
+    padding-top: 9px;
+
+    h1 {
+      font: 18px/24px 'opensans-bold', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+
+      span {
+        border-bottom: 3px solid #11ABB0;
+        padding-bottom: 6px;
+      }
+    }
+  }
+
+  .item {
+
+    h3 {
+      font: 25px/30px 'opensans-bold', sans-serif;
+    }
+
+    .info {
+      font: 16px/24px 'librebaskerville-italic', serif;
+      color: #6E7881;
+      margin-bottom: 18px;
+      margin-top: 9px;
+
+      span {
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+    }
+
+    .date {
+      font: 15px/24px 'opensans-regular', sans-serif;
+      margin-top: 6px;
+    }
+  }
+
+  .bars {
+    width: 95%;
+
+    .skills {
+      margin-top: 36px;
+      list-style: none;
+
+      li {
+        position: relative;
+        margin-bottom: 60px;
+        background: #ccc;
+        height: 42px;
+        border-radius: 3px;
+
+        .bar-expand {
+          position: absolute;
+          left: 0;
+          top: 0;
+          margin: 0;
+          padding-right: 24px;
+          background: #313131;
+          display: inline-block;
+          height: 42px;
+          line-height: 42px;
+          border-radius: 3px 0 0 3px;
+        }
+
+        em {
+          font: 15px 'opensans-bold', sans-serif;
+          color: #313131;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: normal;
+          position: relative;
+          top: -36px;
+        }
+      }
+    }
+  }
+}

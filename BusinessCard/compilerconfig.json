@@ -1,0 +1,18 @@
+﻿[
+  {
+    "outputFile": "BusinessCard/src/app/app.component.css",
+    "inputFile": "BusinessCard/src/app/app.component.scss"
+  },
+  {
+    "outputFile": "BusinessCard/src/styles/_reset.css",
+    "inputFile": "BusinessCard/src/styles/_reset.scss"
+  },
+  {
+    "outputFile": "BusinessCard/src/styles/_variables.css",
+    "inputFile": "BusinessCard/src/styles/_variables.scss"
+  },
+  {
+    "outputFile": "BusinessCard/src/app/menu/menu.component.css",
+    "inputFile": "BusinessCard/src/app/menu/menu.component.scss"
+  }
+]

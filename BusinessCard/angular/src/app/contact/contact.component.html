@@ -1,0 +1,65 @@
+<section id="contact" class="grey-dark-bckgr"
+         [@fadeAnimation]>
+
+  <div class="row section-head">
+
+    <div class="column column-l-20  column-s-100 fs-50">
+
+      <h1><i class="fa fa-envelope" aria-hidden="true"></i></h1>
+
+    </div>
+
+    <div class="column column-l-80 column-s-100">
+
+      <p class="lead">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+        voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="form-wrapper">
+
+    <form action="" method="post" id="contactForm" name="contactForm">
+      <div class="row">
+        <div class="column column-l-50 column-m-100">
+          <div>
+            <label for="contactName">Name<span class="required">*</span></label>
+            <input type="text" value="" size="35" id="contactName" name="contactName">
+          </div>
+
+          <div>
+            <label for="contactEmail">Email<span class="required">*</span></label>
+            <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
+          </div>
+
+          <div>
+            <label for="contactSubject">Subject</label>
+            <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
+          </div>
+        </div>
+        <div class="column column-l-50 column-m-100">
+          <label for="contactMessage">Message <span class="required">*</span></label>
+          <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column column-l-100">
+          <button class="submit button">Submit</button>
+        </div>
+        
+      </div>
+      
+    </form>
+
+
+    <div id="message-success" style="display:none;">
+      <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+    </div>
+
+  </div>
+
+</section>

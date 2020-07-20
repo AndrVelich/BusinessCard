@@ -1,0 +1,69 @@
+@import "variables";
+
+.menu {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  background-color: black;
+  opacity: 0.8;
+
+  .active {
+    color: $color-orange;
+  }
+
+  a {
+    font-weight: bold;
+  }
+}
+
+.menu-mobile {
+  display: none;
+}
+
+.menu-desktop {
+  display: block;
+
+  .menu-list {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+
+    a {
+      margin-right: 50px;
+    }
+  }
+}
+
+.menu.scroll-on-top {
+  background-color: initial;
+}
+
+
+@media (max-width: $mobile-size) {
+
+  .menu-desktop {
+    display: none;
+  }
+
+  .menu-mobile {
+    display: block;
+
+    .menu-toggle {
+      display: block;
+      padding: 10px 40px;
+      position: relative;
+      z-index: 1;
+      background-color: black;
+    }
+
+    .menu-list {
+      display: block;
+      border-top: 1px solid white;
+
+      a {
+        display: block;
+        margin: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,164 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$BusinessCard-primary: mat-palette($mat-indigo);
+$BusinessCard-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$BusinessCard-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$BusinessCard-theme: mat-light-theme($BusinessCard-primary, $BusinessCard-accent, $BusinessCard-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($BusinessCard-theme);
+
+@import "reset";
+@import "variables";
+@import "sizes";
+@import "animations";
+@import "margins";
+
+/*router-outlet ~ * {
+  //position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+}*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: rgba(0,0,0,.8);
+}
+ul {
+  list-style-type: none;
+}
+
+p, .text {
+  font-family: 'opensans-regular', sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 30px;
+  color: #838C95;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+input[type=text], textarea {
+  padding: 18px 20px;
+  border: 0;
+  outline: none;
+  font-size: 15px;
+  line-height: 24px;
+  box-sizing: border-box;
+}
+
+
+
+//fonts
+.fs-50 {
+  font-size: 50px;
+}
+
+.fs-40 {
+  font-size: 40px;
+}
+
+.fs-25 {
+  font-size: 25px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+a:hover {
+  color: $color-green;
+}
+
+.grey-dark-bckgr {
+  background-color: $color-dark-grey;
+  color: white;
+}
+
+.grey-bckgr {
+  background-color: $color-grey;
+  color: white;
+}
+
+.grey-light-bckgr {
+  background-color: $color-light-grey;
+}
+
+.black-light-bckgr {
+  background-color: $color-light-black;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.button, .button:visited, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  font: 16px/30px 'opensans-bold', sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 0;
+  padding: 12px 20px;
+  margin-bottom: 18px;
+  border: none;
+  cursor: pointer;
+  height: auto;
+  transition: all .2s ease-in-out;
+  border-radius: 3px;
+}
+
+.block-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.center {
+  text-align: center;
+}
+
+.dark-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  opacity: 0.4;
+  top: 0;
+}
+
+.horizontal-separator {
+  height: 1px;
+  width: 100%;
+  background-color: white;
+  margin: 20px;
+}

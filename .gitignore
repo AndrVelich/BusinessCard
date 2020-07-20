@@ -3,6 +3,11 @@
 /BusinessCard/bin/*
 /BusinessCard/obj/*
 /BusinessCard/wwwroot/dist/*
+/BusinessCard/angular/node_modules/*
+/Email/EmailSender/bin/*
+/Email/EmailSender/obj/*
+/Email/EmailSender.Interfaces/bin/*
+/Email/EmailSender.Interfaces/obj/*
 /dist
 /tmp
 /out-tsc

@@ -1,0 +1,25 @@
+<div class="menu menu-desktop" [@slideInOut]
+     [class.scroll-on-top]="isScrollOnTop">
+  <div class="menu-list">
+    <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="''" routerLinkActive="active">Home</a>
+    <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="'about'" routerLinkActive="active">About</a>
+    <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="'resume'" routerLinkActive="active">Resume</a>
+    <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="'portfolio'" routerLinkActive="active">Works</a>
+    <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="'contact'" routerLinkActive="active">Contact</a>
+  </div>
+
+</div>
+
+<div class="menu menu-mobile" [@slideInOut]>
+  <a class="menu-toggle fs-25"
+     (click)="toggleMenu()">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </a>
+  <div *ngIf="isMobileMenuVisible" class="menu-list" [@slideInOut]>
+    <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="''" routerLinkActive="active">Home</a>
+    <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="'about'" routerLinkActive="active">About</a>
+    <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="'resume'" routerLinkActive="active">Resume</a>
+    <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="'portfolio'" routerLinkActive="active">Works</a>
+    <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="'contact'" routerLinkActive="active">Contact</a>
+  </div>
+</div>

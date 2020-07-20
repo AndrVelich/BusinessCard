@@ -1,0 +1,41 @@
+@import "variables";
+
+#contact {
+  color: #ccc;
+
+  .form-wrapper {
+
+    .row {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    form {
+
+      label {
+        font: 15px/24px 'opensans-bold', sans-serif;
+        margin: 12px 0;
+        display: block;
+      }
+
+      input, textarea {
+        background: $color-middle-grey;
+        width: 100%;
+      }
+
+      textarea {
+        height: 278px;
+      }
+
+      .button {
+        background: $color-orange;
+        color: white;
+        font-weight: 600;
+      }
+
+      .button:hover {
+        background: $color-green;
+      }
+    }
+  }
+}
