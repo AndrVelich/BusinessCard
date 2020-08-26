@@ -1,87 +1,106 @@
-import {
-  Component,
-  Inject,
-  OnDestroy,
-  Renderer2,
+﻿import {
+    Component,
+    Inject,
+    OnDestroy,
+    Renderer2,
 
-  ElementRef, Input, Output, EventEmitter, HostListener
+    ElementRef, Input, Output, EventEmitter, HostListener
 
 } from "@angular/core";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { fadeAnimation } from '@common/animations/fadeAnimation';
+import { PortfolioWorkModel, MediaWorkItem } from '@services/portfolio.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 @Component({
-  selector: 'portfolioItem-component',
-  templateUrl: './portfolioItem.component.html',
-  styleUrls: ['./portfolioItem.component.scss'],
-  animations: [fadeAnimation]
+    selector: 'portfolioItem-component',
+    templateUrl: './portfolioItem.component.html',
+    styleUrls: ['./portfolioItem.component.scss'],
+    animations: [fadeAnimation]
 })
 export class PortfolioItemComponent {
-  private index: number;
+    private index: number;
 
-  constructor(
-    public dialogRef: MatDialogRef<PortfolioItemComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: PortfolioWorkModel
-  )
-  {
-  }
-
-  ngOnInit() {
-    this.index = 0;
-  }
-
-  @HostListener('document:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.key == 'ArrowRight') {
-      this.toNext()
+    constructor(
+        private sanitizer: DomSanitizer,
+        public dialogRef: MatDialogRef<PortfolioItemComponent>,
+        @Inject(MAT_DIALOG_DATA) public data: PortfolioWorkModel
+    ) {
     }
-    if (event.key == 'ArrowLeft') {
-      this.toPrevious()
+
+    ngOnInit() {
+        this.index = 0;
     }
-  }
 
-  public toPrevious(): void {
-    if (this.isPreviousAvailable()) {
-      --this.index;
+    @HostListener('document:keydown', ['$event'])
+    handleKeyboardEvent(event: KeyboardEvent) {
+        if (event.key == 'ArrowRight') {
+            this.toNext()
+        }
+        if (event.key == 'ArrowLeft') {
+            this.toPrevious()
+        }
     }
-  }
 
-  public toNext(): void {
-    if (this.isNextAvailable()) {
-      ++this.index;
+    public toPrevious(): void {
+        if (this.isPreviousAvailable()) {
+            --this.index;
+        }
     }
-    else {
-      this.index = 0;
+
+    public toNext(): void {
+        if (this.isNextAvailable()) {
+            ++this.index;
+        }
+        else {
+            this.index = 0;
+        }
     }
-  }
 
-  public isNextAvailable(): boolean {
-    var result = this.index < this.data.imgSrcCollection.length - 1;
-    return result;
-  }
+    public isNextAvailable(): boolean {
+        var result = this.index < this.data.mediaWorkCollection.length - 1;
+        return result;
+    }
 
-  public isPreviousAvailable(): boolean {
-    var result = this.index > 0;
-    return result;
-  }
+    public isPreviousAvailable(): boolean {
+        var result = this.index > 0;
+        return result;
+    }
 
-  public getImagePath(): string {
-    var result = this.data.imgSrcCollection[this.index];
-    return result;
-  }
+    public getImagePath(): string {
+        let mediaWork = this.data.mediaWorkCollection[this.index];
+        let result = mediaWork.imgSrc;
 
-  public close(): void {
-    this.dialogRef.close();
-  }
+        return result;
+    }
 
-  public trackBy(index, item) {
-    return item;
-  }
-}
+    public getVideoId(): string {
+        let mediaWork = this.data.mediaWorkCollection[this.index];
+        let result = mediaWork.videoId;
 
-export class PortfolioWorkModel {
-  public imgSrcCollection: string[];
-  public title: string;
-  public description: string;
-  public tags: string;
+        return result;
+    }
+
+    public getSafeVideoUrl(): SafeResourceUrl {
+        let videoId = this.getVideoId();
+        let url = 'https://www.youtube.com/embed/' + videoId;
+        let result = this.getSafeUrl(url);
+
+        return result;
+    }
+
+    
+
+    public close(): void {
+        this.dialogRef.close();
+    }
+
+    public trackBy(index, item) {
+        return item;
+    }
+
+    private getSafeUrl(url) {
+        return this.sanitizer.bypassSecurityTrustResourceUrl(url)
+    }
 }

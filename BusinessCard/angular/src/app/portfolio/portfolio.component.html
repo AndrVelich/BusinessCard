@@ -1,66 +1,26 @@
 <section id="portfolio" class="grey-light-bckgr"
          [@fadeAnimation]>
-  <div class="center">
-    <h1>Check Out Some of My Works.</h1>
-  </div>
-  <div id="portfolio-wrapper" class="row">
-    <div class="column column-l-25 column-m-50 column-s-100 portfolio-item">
-      <div class="item-wrap">
-
-        <a (click)="openPortfolioPopup(portfolioWork)"
-           title="">
-          <img alt=""
-               src="/dist/assets/img/portfolio/coffee.jpg">
-          <div class="dark-overlay">
-          </div>
-          <div class="portfolio-item-meta fade-in">
-            <h5>Coffee</h5>
-            <p>Illustrration</p>
-          </div>
-        </a>
-
-      </div>
+    <div class="center">
+        <h1>Check Out Some of My Works.</h1>
     </div>
-    <div class="column column-l-25 column-m-50 column-s-100 portfolio-item">
-      <div class="item-wrap">
+    <div id="portfolio-wrapper" class="row">
+        <div *ngFor="let portfolioWork of portfolioWorkCollection" 
+             class="column column-l-25 column-m-50 column-s-100 portfolio-item">
+            <div class="item-wrap">
+                <a (click)="openPortfolioPopup(portfolioWork)"
+                   title="">
+                    <img *ngIf="portfolioWork.mediaWorkCollection[0] && (portfolioWork.mediaWorkCollection[0].imgSrc || portfolioWork.mediaWorkCollection[0].videoId)" alt=""
+                         [src]="portfolioWork.mediaWorkCollection[0].imgSrc ? portfolioWork.mediaWorkCollection[0].imgSrc : 'http://i3.ytimg.com/vi/' + portfolioWork.mediaWorkCollection[0].videoId + '/hqdefault.jpg'">
+                    <div class="dark-overlay">
+                    </div>
+                    <div class="portfolio-item-meta fade-in">
+                        <h5 [innerHtml]="portfolioWork.title"></h5>
+                        <p [innerHtml]="portfolioWork.description"></p>
+                    </div>
+                </a>
 
-        <a (click)="openPortfolioPopup(portfolioWork)" title="">
-          <img alt="" src="/dist/assets/img/portfolio/console.jpg">
-          <div class="dark-overlay">
-          </div>
-          <div class="portfolio-item-meta fade-in" >
-            <h5>Console</h5>
-            <p>Web Development</p>
-          </div>
-        </a>
-
-      </div>
+            </div>
+        </div>
+        
     </div>
-    <div class="column column-l-25 column-m-50 column-s-100 portfolio-item">
-      <div class="item-wrap">
-        <a (click)="openPortfolioPopup(portfolioWork)" title="">
-          <img alt="" src="/dist/assets/img/portfolio/judah.jpg">
-          <div class="dark-overlay">
-          </div>
-          <div class="portfolio-item-meta fade-in">
-            <h5>Judah</h5>
-            <p>Webdesign</p>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="column column-l-25 column-m-50 column-s-100 portfolio-item">
-      <div class="item-wrap">
-        <a (click)="openPortfolioPopup(portfolioWork)" title="">
-          <img alt="" src="/dist/assets/img/portfolio/into-the-light.jpg">
-          <div class="dark-overlay">
-          </div>
-          <div class="portfolio-item-meta fade-in">
-            <h5>Into The Light</h5>
-            <p>Photography</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
 </section>

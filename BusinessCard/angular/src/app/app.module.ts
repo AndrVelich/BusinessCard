@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, UrlSerializer } from "@angular/router";
 
-import { LowerCaseUrlSerializer } from "./extensions/lowerCaseUrlSerializer";
+import { LowerCaseUrlSerializer } from "@extensions/lowerCaseUrlSerializer";
 
 import {
-  MatDialogModule
+    MatDialogModule
 } from '@angular/material/dialog';
+
+import { PortfolioService } from '@services/portfolio.service';
 
 import { routes } from './routing';
 import { AppComponent } from './app.component';
@@ -20,34 +22,37 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ResumeComponent } from './resume/resume.component';
 import { HomeComponent } from './home/home.component';
 
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    AboutComponent,
-    ContactComponent,
-    FooterComponent,
-    HeroComponent,
-    MenuComponent,
-    PortfolioComponent,
-    ResumeComponent,
-    HomeComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatDialogModule,
-    RouterModule.forRoot(routes),
-  ],
-  providers: [
-    {
-      provide: "window",
-      useValue: window
-    },
-    {
-      provide: UrlSerializer,
-      useClass: LowerCaseUrlSerializer
-    },
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AboutComponent,
+        ContactComponent,
+        FooterComponent,
+        HeroComponent,
+        MenuComponent,
+        PortfolioComponent,
+        ResumeComponent,
+        HomeComponent,
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatDialogModule,
+        RouterModule.forRoot(routes),
+    ],
+    providers: [
+        {
+            provide: "window",
+            useValue: window
+        },
+        {
+            provide: UrlSerializer,
+            useClass: LowerCaseUrlSerializer
+        },
+        PortfolioService,
+        
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

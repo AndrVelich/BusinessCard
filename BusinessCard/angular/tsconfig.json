@@ -17,13 +17,13 @@
     ],
     "paths": {
       "@extensions/*": [
-        "src/app/extensions/*"
+        "src/app/_extensions/*"
       ],
       "@common/*": [
-        "src/app/common/*"
+        "src/app/_common/*"
       ],
       "@services/*": [
-        "src/app/services/*"
+        "src/app/_services/*"
       ]
     }
   },
