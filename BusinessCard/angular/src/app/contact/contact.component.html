@@ -23,40 +23,60 @@
 
   <div class="form-wrapper">
 
-    <form action="" method="post" id="contactForm" name="contactForm">
+    <div [formGroup]="contactForm"
+         *ngIf="!showConfirmMessage">
       <div class="row">
         <div class="column column-l-50 column-m-100">
           <div>
             <label for="contactName">Name<span class="required">*</span></label>
-            <input type="text" value="" size="35" id="contactName" name="contactName">
+            <input type="text" 
+                   value="" 
+                   size="35"
+                   name="name"
+                   formControlName="name" 
+                   [(ngModel)]="contactModel.name">
           </div>
 
           <div>
             <label for="contactEmail">Email<span class="required">*</span></label>
-            <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
+            <input 
+                   type="text" 
+                   value="" 
+                   size="35" 
+                   name="email"
+                   formControlName="email" 
+                   [(ngModel)]="contactModel.email">
           </div>
 
           <div>
             <label for="contactSubject">Subject</label>
-            <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
+            <input type="text" 
+                   value="" 
+                   size="35" 
+                   name="subject"
+                   formControlName="subject" 
+                   [(ngModel)]="contactModel.subject">
           </div>
         </div>
         <div class="column column-l-50 column-m-100">
           <label for="contactMessage">Message <span class="required">*</span></label>
-          <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+          <textarea name="message"
+                    formControlName="subject" 
+                    [(ngModel)]="contactModel.subject"></textarea>
         </div>
       </div>
       <div class="row">
         <div class="column column-l-100">
-          <button class="submit button">Submit</button>
+          <button class="submit button" 
+                  (click)="saveContact()">Submit</button>
         </div>
         
       </div>
       
-    </form>
+    </div>
 
 
-    <div id="message-success" style="display:none;">
+    <div id="message-success" *ngIf="showConfirmMessage">
       <i class="fa fa-check"></i>Your message was sent, thank you!<br>
     </div>
 

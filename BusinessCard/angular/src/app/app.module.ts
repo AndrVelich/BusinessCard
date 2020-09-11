@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, UrlSerializer } from "@angular/router";
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
 
 import { LowerCaseUrlSerializer } from "@extensions/lowerCaseUrlSerializer";
 
@@ -10,6 +12,7 @@ import {
 } from '@angular/material/dialog';
 
 import { PortfolioService } from '@services/portfolio.service';
+import { ContactService } from '@services/contact.service';
 
 import { routes } from './routing';
 import { AppComponent } from './app.component';
@@ -39,6 +42,8 @@ import { HomeComponent } from './home/home.component';
         BrowserModule,
         BrowserAnimationsModule,
         MatDialogModule,
+        ReactiveFormsModule,
+        HttpClientModule,
         RouterModule.forRoot(routes),
     ],
     providers: [
@@ -51,6 +56,7 @@ import { HomeComponent } from './home/home.component';
             useClass: LowerCaseUrlSerializer
         },
         PortfolioService,
+        ContactService,
         
     ],
     bootstrap: [AppComponent]
