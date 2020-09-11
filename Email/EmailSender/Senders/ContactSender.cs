@@ -2,6 +2,7 @@
 using EmailSender.Interfaces.Models;
 using EmailSender.Interfaces.Senders;
 using EmailSender.Service;
+using Microsoft.AspNetCore.Hosting;
 using MimeKit;
 
 namespace EmailSender.Senders
@@ -10,37 +11,30 @@ namespace EmailSender.Senders
     {
         private const string emailToken = "{email}";
         private const string nameToken = "{name}";
+        private const string subjectToken = "{subject}";
         private const string messageToken = "{message}";
         private const string dateToken = "{date}";
 
         private readonly IEmailService _emailService;
+        private readonly IHostingEnvironment _env;
 
-        public ContactSender(IEmailService emailService)
+        public ContactSender(IEmailService emailService, IHostingEnvironment env)
         {
             _emailService = emailService;
+            _env = env;
         }
 
-        public void SendContactInfo(string email, ContactModel contactModel,  string templatePath)
+        public void SendContactInfo(string email, ContactModel contactModel, string templatePath)
         {
-            //TODO get from config
-            //var pathToFile = webRoot
-            //                 + Path.DirectorySeparatorChar
-            //                 + "EmailTemplates"
-            //                 + Path.DirectorySeparatorChar
-            //                 + "Order"
-            //                 + Path.DirectorySeparatorChar
-            //                 + "OrderNotification.html";
-
-            var subject = string.IsNullOrWhiteSpace(contactModel.Subject) ?  "New letter" : contactModel.Subject;
-
+            var pathToFile = $"{_env.WebRootPath}{templatePath}";
             var builder = new BodyBuilder();
-            using (StreamReader SourceReader = File.OpenText(templatePath))
+            using (StreamReader SourceReader = File.OpenText(pathToFile))
             {
                 builder.HtmlBody = SourceReader.ReadToEnd();
             }
             string messageBody = ReplaceTokens(builder.HtmlBody, contactModel);
 
-            _emailService.SendEmailAsync(email, subject, messageBody);
+            _emailService.SendEmailAsync(email, contactModel.Subject, messageBody);
         }
 
         private string ReplaceTokens(string messageBody, ContactModel contactModel)
@@ -48,6 +42,7 @@ namespace EmailSender.Senders
             messageBody = messageBody.Replace(emailToken, contactModel.Email);
             messageBody = messageBody.Replace(nameToken, contactModel.Name);
             messageBody = messageBody.Replace(messageToken, contactModel.Message);
+            messageBody = messageBody.Replace(subjectToken, contactModel.Subject);
             messageBody = messageBody.Replace(dateToken, contactModel.Date.ToString("yyyy-MM-dd HH:mm"));
 
             return messageBody;

@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailSender", "Email\EmailS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailSender.Interfaces", "Email\EmailSender.Interfaces\EmailSender.Interfaces.csproj", "{A78B962D-9FFD-44D6-9743-0AA210C09D18}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DI", "DI", "{782F4F4D-AE7A-4582-8A5A-87F879CEB228}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiConfiguration", "DI\DiConfiguration\DiConfiguration.csproj", "{887C0C1A-490C-4180-946B-973170BB036E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{A78B962D-9FFD-44D6-9743-0AA210C09D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A78B962D-9FFD-44D6-9743-0AA210C09D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A78B962D-9FFD-44D6-9743-0AA210C09D18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{887C0C1A-490C-4180-946B-973170BB036E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{887C0C1A-490C-4180-946B-973170BB036E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{887C0C1A-490C-4180-946B-973170BB036E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{887C0C1A-490C-4180-946B-973170BB036E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B5D08A8A-1F45-4D1A-9298-3367102125BA} = {2A36DF83-EAC2-4D0B-B095-4FAD844C034A}
 		{A78B962D-9FFD-44D6-9743-0AA210C09D18} = {2A36DF83-EAC2-4D0B-B095-4FAD844C034A}
+		{887C0C1A-490C-4180-946B-973170BB036E} = {782F4F4D-AE7A-4582-8A5A-87F879CEB228}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {252359E4-04E9-4F2F-A1B0-A17E8EAF602C}

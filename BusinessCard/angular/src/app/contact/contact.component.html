@@ -1,6 +1,5 @@
 <section id="contact" class="grey-dark-bckgr"
          [@fadeAnimation]>
-
   <div class="row section-head">
 
     <div class="column column-l-20  column-s-100 fs-50">
@@ -20,9 +19,7 @@
     </div>
 
   </div>
-
   <div class="form-wrapper">
-
     <div [formGroup]="contactForm"
          *ngIf="!showConfirmMessage">
       <div class="row">
@@ -44,6 +41,7 @@
                    value="" 
                    size="35" 
                    name="email"
+                   email
                    formControlName="email" 
                    [(ngModel)]="contactModel.email">
           </div>
@@ -70,16 +68,10 @@
           <button class="submit button" 
                   (click)="saveContact()">Submit</button>
         </div>
-        
       </div>
-      
     </div>
-
-
-    <div id="message-success" *ngIf="showConfirmMessage">
+    <div class="message-success" *ngIf="showConfirmMessage">
       <i class="fa fa-check"></i>Your message was sent, thank you!<br>
     </div>
-
   </div>
-
 </section>

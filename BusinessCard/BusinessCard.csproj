@@ -23,7 +23,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\EmailTemplates\ContactEmail.html" />
     <None Include="wwwroot\favicon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DI\DiConfiguration\DiConfiguration.csproj" />
+    <ProjectReference Include="..\Email\EmailSender.Interfaces\EmailSender.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

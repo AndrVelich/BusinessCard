@@ -8,6 +8,8 @@
 /Email/EmailSender/obj/*
 /Email/EmailSender.Interfaces/bin/*
 /Email/EmailSender.Interfaces/obj/*
+/DI/DiConfiguration/bin/*
+/DI/DiConfiguration/obj/*
 /dist
 /tmp
 /out-tsc

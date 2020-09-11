@@ -34,5 +34,15 @@
         .button:hover {
             background: $color-green;
         }
+
+        .message-success {
+            text-align: center;
+            padding-bottom: 50px;
+            font-size: 25px;
+
+            i {
+                margin: 0 10px;
+            }
+        }
     }
 }
