@@ -2,6 +2,7 @@
 # compiled output
 /BusinessCard/bin/*
 /BusinessCard/obj/*
+/BusinessCard/Logs/*
 /BusinessCard/wwwroot/dist/*
 /BusinessCard/angular/node_modules/*
 /Email/EmailSender/bin/*
