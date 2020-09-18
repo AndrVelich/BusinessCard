@@ -35,7 +35,7 @@ namespace EmailSender.Service
 
             using (var client = new SmtpClient())
             {
-                await client.ConnectAsync(_smtpSettings.Host, _smtpSettings.Port, MailKit.Security.SecureSocketOptions.StartTls);
+                await client.ConnectAsync(_smtpSettings.Host, _smtpSettings.Port, _smtpSettings.SSL);
                 await client.AuthenticateAsync(_smtpSettings.Username, _smtpSettings.Password);
                 await client.SendAsync(emailMessage);
                 await client.DisconnectAsync(true);
