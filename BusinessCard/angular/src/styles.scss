@@ -96,6 +96,13 @@ input[type=text], textarea {
   font-size: 20px;
 }
 
+@media (max-width: $mobile-size) {
+    .fs-m-30 {
+        font-size: 30px;
+    }
+}
+
+
 a:hover {
   color: $color-green;
 }

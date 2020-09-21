@@ -1,6 +1,6 @@
 <section id="portfolio-item"
          [@fadeAnimation]>
-    <div class="center">
+    <div class="center media-container">
         <div [hidden]="!isPreviousAvailable()"
              (click)="toPrevious()"
              class="arrow to-left">
@@ -10,10 +10,13 @@
              (click)="toNext()"
              class="work-img"
              alt="">
-        <iframe class="video-iframe"
-                allowfullscreen
-                [hidden]="!getVideoId()"
-                [attr.src]="getSafeVideoUrl()"></iframe>
+        <div class="iframe-container"
+             [hidden]="!getVideoId()">
+            <iframe class="iframe"
+                    allowfullscreen
+                    [attr.src]="getSafeVideoUrl()"></iframe>
+        </div>
+        
         <div [hidden]="!isNextAvailable()"
              (click)="toNext()"
              class="arrow to-right">
