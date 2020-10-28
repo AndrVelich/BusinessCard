@@ -35,7 +35,7 @@ export class PortfolioService {
         ];
         carneSimplifi.title = "Crane Simplifi";
         carneSimplifi.description = "Vending business management system"
-        carneSimplifi.tags = "MS SQL, ASP.net MVC, Angular";
+        carneSimplifi.tags = "MS SQL, ASP.NET MVC, Angular";
 
         return carneSimplifi;
     }
@@ -62,7 +62,7 @@ export class PortfolioService {
         ];
         imdad.title = "Imdad";
         imdad.description = "Aesthetic technologies & lasers distributor in middle east. Securing confidence in aesthetic medicine since 1991"
-        imdad.tags = "ASP.net MVC, MS SQL, Sitecore, integration with Salesforce";
+        imdad.tags = "ASP.NET MVC, MS SQL, Sitecore, integration with Salesforce";
 
         return imdad;
     }
@@ -85,7 +85,7 @@ export class PortfolioService {
         ];
         stratasys.title = "Stratasys";
         stratasys.description = "Global leader in 3D printing and additive solutions"
-        stratasys.tags = "ASP.net MVC, MS SQL, Sitecore";
+        stratasys.tags = "ASP.NET MVC, MS SQL, Sitecore";
 
         return stratasys;
     }
@@ -108,7 +108,7 @@ export class PortfolioService {
         ];
         sdm.title = "Stratasys Direct";
         sdm.description = "Experience the future of manufacturing with custom 3D printing services by Stratasys Direct Manufacturings"
-        sdm.tags = "ASP.net MVC, MS SQL, Sitecore";
+        sdm.tags = "ASP.NET MVC, MS SQL, Sitecore";
 
         return sdm;
     }
